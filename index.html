@@ -65,42 +65,93 @@
 
 <script>
 const criticisms = [
-  "That’s a fascinating way to ruin your own life.",
-  "You’ve clearly put zero thought into any of this.",
-  "I didn’t think it was possible to trip over your own logic that hard.",
-  "That’s not a challenge, it’s just a mess you made.",
-  "You’ve mistaken self-pity for self-reflection.",
-  "It’s like you’re actively trying to disappoint yourself.",
-  "You keep digging and then act surprised there's a hole.",
-  "That’s not a problem, it’s a bad habit you refuse to drop.",
-  "Every word you say screams 'I haven’t learned a thing.'",
-  "You’re describing a failure, not a situation.",
-  "Your pattern is consistency—in making bad calls.",
-  "You're putting a lot of effort into staying stuck.",
-  "That’s not a situation; it’s the consequence of you avoiding reality.",
-  "You've turned rationalization into an art form.",
-  "You're more committed to your excuses than your goals.",
-  "You didn’t fall into this—you walked in with confidence.",
-  "This feels less like a problem and more like your personality."
+   "That's honestly pretty pathetic.",
+    "Wow, that's your big problem?",
+    "You really thought that was a good idea?",
+    "No offense, but that just sounds like a personal failure.",
+    "Do you ever take responsibility for anything?",
+    "That's not just bad—that's impressively bad.",
+    "You keep making excuses instead of fixing it.",
+    "Sounds like you're the common denominator in your problems.",
+    "Have you considered that this is entirely your fault?",
+    "Thats the kind of mistake people write books about—on what *not* to do.",
+    "Youre basically a case study in poor decision-making.",
+    "Its almost impressive how badly you handled that.",
+    "If this is your idea of a crisis, your life must be a trainwreck.",
+    "You're not even trying to improve, are you?",
+    "Thats not a problem, thats just a consequence of your choices.",
+    "This just screams 'lack of self-awareness.'",
+    "Are you trying to fail at everything?",
+    "Its like you set yourself up to be disappointed.",
+    "Youve outdone yourself—this is worse than I expected.",
+    "Why am I not surprised you ended up in this situation?" 
+    "Thats a fascinating way to ruin your own life.",
+    "Youve clearly put zero thought into any of this.",
+    "I didnt think it was possible to trip over your own logic that hard.",
+    "Thats not a challenge, its just a mess you made.",
+    "Youve mistaken self-pity for self-reflection.",
+    "Its like youre actively trying to disappoint yourself.",
+    "You keep digging and then act surprised there's a hole.",
+    "Thats not a problem, its a bad habit you refuse to drop.",
+    "Every word you say screams 'I havent learned a thing.'",
+    "Youre describing a failure, not a situation.",
+    "Your pattern is consistency—in making bad calls.",
+    "You're putting a lot of effort into staying stuck.",
+    "Thats not a situation; its the consequence of you avoiding reality.",
+    "You've turned rationalization into an art form.",
+    "You're more committed to your excuses than your goals.",
+    "You didnt fall into this—you walked in with confidence.",
+    "This feels less like a problem and more like your personality."
+    "Just stop being sad"
+    "Your mental health does not matter to me"
+    "You should really consider therapy, but I don't think you can afford it"
+    "Why do you think I would want to listen to this?"
+    "Have you tried literally anything else?"
+    "You are literally really stupid"
+    "Is this your first day on earth? Because it sure sounds like it"
+    "You should really consider a new hobby, like not being a loser"
+    "I wouldn't be surprised if you were the reason for global warming"
+    "People are dying, Kim"
+    "This is why you have no friends"
 ];
 
 const followUps = [
-  "Is denial really your strategy here?",
-  "What’s stopping you from taking responsibility—besides you?",
-  "How much longer do you plan on pretending this isn't your fault?",
-  "If you already know it’s broken, why are you clinging to it?",
-  "What exactly are you hoping I’ll say to make this sound smart?",
-  "When was the last time you made a decision you didn’t regret?",
-  "Are you always this committed to ignoring the obvious?",
-  "Do you genuinely believe this makes you look like the victim?",
-  "If this was someone else’s excuse, would you believe it?",
-  "When are you going to admit that you created this mess?",
-  "What’s your endgame here—pity, avoidance, or both?",
-  "How are you still surprised when this keeps happening?",
-  "Is this you being honest, or just trying to sound deep?",
-  "What would change if you actually owned up to this?",
-  "Is there any part of this you haven’t messed up yet?",
-  "What do you lose by telling yourself the truth?"
+    "Why would you even do that?",
+    "What did you think was going to happen?",
+    "Do you even listen to yourself?",
+    "And you thought this would end well?",
+    "How do you expect anyone to sympathize with that?",
+    "What exactly were you hoping for?",
+    "Is that seriously your excuse?",
+    "What makes you think this is worth complaining about?",
+    "How many times have you done this before?",
+    "Did you actually plan this, or was that the problem?",
+    "How is this surprising to you?",
+    "So you just thought thisll work out?",
+    "Do you honestly think thats acceptable behavior?",
+    "When are you going to stop making the same mistakes?",
+    "Did you learn anything, or are you going to do it again?",
+    "What part of this seemed like a smart move?",
+    "Are you hearing yourself right now?",
+    "Have you considered thinking before acting?",
+    "Would you give this advice to someone else?",
+    "Do you want pity, or are you looking for accountability?"
+    "Is denial really your strategy here?",
+    "Whats stopping you from taking responsibility—besides you?",
+    "How much longer do you plan on pretending this isn't your fault?",
+    "If you already know its broken, why are you clinging to it?",
+    "What exactly are you hoping Ill say to make this sound smart?",
+    "When was the last time you made a decision you didnt regret?",
+    "Are you always this committed to ignoring the obvious?",
+    "Do you genuinely believe this makes you look like the victim?",
+    "If this was someone elses excuse, would you believe it?",
+    "When are you going to admit that you created this mess?",
+    "Whats your endgame here—pity, avoidance, or both?",
+    "How are you still surprised when this keeps happening?",
+    "Is this you being honest, or just trying to sound deep?",
+    "What would change if you actually owned up to this?",
+    "Is there any part of this you havent messed up yet?",
+    "What do you lose by telling yourself the truth?"
 ];
 
 let recentCriticisms = [];
@@ -140,8 +191,8 @@ function sendMessage() {
   chatbox.scrollTop = chatbox.scrollHeight;
 
   input.value = '';
-}
-</script>
+
+  
 
 </body>
 </html>
