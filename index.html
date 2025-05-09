@@ -64,7 +64,8 @@
 <button onclick="sendMessage()">Send</button>
 
 <script>
-const criticisms = [ "That's honestly pretty pathetic.",
+const criticisms =[
+    "That's honestly pretty pathetic.",
     "Wow, that's your big problem?",
     "You really thought that was a good idea?",
     "No offense, but that just sounds like a personal failure.",
@@ -111,9 +112,11 @@ const criticisms = [ "That's honestly pretty pathetic.",
     "You should really consider a new hobby, like not being a loser"
     "I wouldn't be surprised if you were the reason for global warming"
     "People are dying, Kim"
-    "This is why you have no friends"];
+    "This is why you have no friends"
+      ];
 
-const followUps = [ "Why would you even do that?",
+const followUps =[ 
+  "Why would you even do that?",
     "What did you think was going to happen?",
     "Do you even listen to yourself?",
     "And you thought this would end well?",
@@ -148,10 +151,11 @@ const followUps = [ "Why would you even do that?",
     "Is this you being honest, or just trying to sound deep?",
     "What would change if you actually owned up to this?",
     "Is there any part of this you havent messed up yet?",
-    "What do you lose by telling yourself the truth?"];
+    "What do you lose by telling yourself the truth?"
+  ];
 
-let recentCriticisms = [];
-let recentFollowUps = [];
+let recentCriticisms = [10];
+let recentFollowUps = [10];
 
 function getUniqueRandom(list, recent) {
   const filtered = list.filter(item => !recent.includes(item));
