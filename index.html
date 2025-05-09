@@ -1,1 +1,147 @@
-Hello goodbye
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CriticalBot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e1e;
+      color: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #ff5555;
+    }
+    #chatbox {
+      width: 600px;
+      max-height: 400px;
+      overflow-y: auto;
+      border: 1px solid #555;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #2a2a2a;
+    }
+    .message {
+      margin: 10px 0;
+    }
+    .user {
+      color: #9cdcfe;
+    }
+    .bot {
+      color: #ff8080;
+    }
+    input[type="text"] {
+      width: 500px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      background-color: #ff5555;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff7777;
+    }
+  </style>
+</head>
+<body>
+
+<h1>CriticalBot</h1>
+<div id="chatbox"></div>
+<input type="text" id="userInput" placeholder="Tell me your problem...">
+<button onclick="sendMessage()">Send</button>
+
+<script>
+const criticisms = [
+  "That’s a fascinating way to ruin your own life.",
+  "You’ve clearly put zero thought into any of this.",
+  "I didn’t think it was possible to trip over your own logic that hard.",
+  "That’s not a challenge, it’s just a mess you made.",
+  "You’ve mistaken self-pity for self-reflection.",
+  "It’s like you’re actively trying to disappoint yourself.",
+  "You keep digging and then act surprised there's a hole.",
+  "That’s not a problem, it’s a bad habit you refuse to drop.",
+  "Every word you say screams 'I haven’t learned a thing.'",
+  "You’re describing a failure, not a situation.",
+  "Your pattern is consistency—in making bad calls.",
+  "You're putting a lot of effort into staying stuck.",
+  "That’s not a situation; it’s the consequence of you avoiding reality.",
+  "You've turned rationalization into an art form.",
+  "You're more committed to your excuses than your goals.",
+  "You didn’t fall into this—you walked in with confidence.",
+  "This feels less like a problem and more like your personality."
+];
+
+const followUps = [
+  "Is denial really your strategy here?",
+  "What’s stopping you from taking responsibility—besides you?",
+  "How much longer do you plan on pretending this isn't your fault?",
+  "If you already know it’s broken, why are you clinging to it?",
+  "What exactly are you hoping I’ll say to make this sound smart?",
+  "When was the last time you made a decision you didn’t regret?",
+  "Are you always this committed to ignoring the obvious?",
+  "Do you genuinely believe this makes you look like the victim?",
+  "If this was someone else’s excuse, would you believe it?",
+  "When are you going to admit that you created this mess?",
+  "What’s your endgame here—pity, avoidance, or both?",
+  "How are you still surprised when this keeps happening?",
+  "Is this you being honest, or just trying to sound deep?",
+  "What would change if you actually owned up to this?",
+  "Is there any part of this you haven’t messed up yet?",
+  "What do you lose by telling yourself the truth?"
+];
+
+let recentCriticisms = [];
+let recentFollowUps = [];
+
+function getUniqueRandom(list, recent) {
+  const filtered = list.filter(item => !recent.includes(item));
+  if (filtered.length === 0) {
+    recent.length = 0;
+    return list[Math.floor(Math.random() * list.length)];
+  }
+  const choice = filtered[Math.floor(Math.random() * filtered.length)];
+  recent.push(choice);
+  if (recent.length > 10) recent.shift();
+  return choice;
+}
+
+function sendMessage() {
+  const input = document.getElementById('userInput');
+  const chatbox = document.getElementById('chatbox');
+  const userText = input.value.trim();
+  if (userText === '') return;
+
+  const userMsg = `<div class="message user"><strong>You:</strong> ${userText}</div>`;
+  chatbox.innerHTML += userMsg;
+
+  if (userText.toLowerCase() === 'quit') {
+    chatbox.innerHTML += `<div class="message bot"><strong>CriticalBot:</strong> Finally, some peace and quiet.</div>`;
+    input.disabled = true;
+    return;
+  }
+
+  const crit = getUniqueRandom(criticisms, recentCriticisms);
+  const follow = getUniqueRandom(followUps, recentFollowUps);
+  const botMsg = `<div class="message bot"><strong>CriticalBot:</strong> ${crit} ${follow}</div>`;
+  chatbox.innerHTML += botMsg;
+  chatbox.scrollTop = chatbox.scrollHeight;
+
+  input.value = '';
+}
+</script>
+
+</body>
+</html>
